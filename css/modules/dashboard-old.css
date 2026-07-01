@@ -1,0 +1,617 @@
+/* =========================
+   AI DASHBOARD
+========================= */
+
+.dashboard-preview{
+    background: linear-gradient(180deg,#090812,#06060d);
+}
+
+.dashboard-card{
+
+    background: rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    padding:40px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:25px;
+
+}
+
+.dashboard-header h3{
+
+    color:#fff;
+
+    font-weight:700;
+
+    margin-bottom:6px;
+
+}
+
+.dashboard-header small{
+
+    color:#a8a8b5;
+
+}
+
+.dashboard-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    border-radius:40px;
+
+    background:rgba(0,255,170,.12);
+
+    color:#32ffb4;
+
+    font-weight:700;
+
+    border:1px solid rgba(0,255,170,.35);
+
+}
+
+.status-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#00ff99;
+
+    box-shadow:0 0 12px #00ff99;
+
+    animation:pulse 1.6s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+}
+
+.dashboard-divider{
+
+    border-color:rgba(255,255,255,.08);
+
+    margin:30px 0;
+
+}
+
+.dashboard-chart{
+
+    height:280px;
+
+    border-radius:22px;
+
+    background:linear-gradient(180deg,#1b1b24,#17171f);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.chart-icon{
+
+    font-size:56px;
+
+    color:#ffe100;
+
+    margin-bottom:20px;
+
+}
+
+.dashboard-chart h4{
+
+    color:#fff;
+
+    font-weight:700;
+
+}
+
+.dashboard-chart p{
+
+    color:#b7b7c5;
+
+    max-width:480px;
+
+    margin-top:12px;
+
+}
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+    margin-bottom:40px;
+
+}
+
+.dashboard-item{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:18px;
+
+    transition:.30s;
+
+}
+
+.dashboard-item:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#ffd400;
+
+    box-shadow:0 0 25px rgba(255,212,0,.18);
+
+}
+
+.dashboard-item span{
+
+    display:block;
+
+    color:#b6b6c5;
+
+    font-size:.9rem;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-item strong{
+
+    color:#ffe100;
+
+    font-size:1.15rem;
+
+}
+
+.dashboard-probability{
+
+    margin-top:20px;
+
+}
+
+.probability-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#fff;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+}
+
+.probability-bar{
+
+    width:100%;
+
+    height:14px;
+
+    background:#232330;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+}
+
+.probability-fill{
+
+    height:100%;
+
+    border-radius:30px;
+
+}
+
+.buy-fill{
+
+    width:84%;
+
+    background:linear-gradient(90deg,#00d26a,#00ff99);
+
+}
+
+.sell-fill{
+
+    width:16%;
+
+    background:linear-gradient(90deg,#ff5a5a,#ff1f1f);
+
+}
+
+.signal-card{
+
+    margin-top:45px;
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:30px;
+
+}
+
+.signal-card h4{
+
+    color:#fff;
+
+    margin-bottom:30px;
+
+    font-weight:700;
+
+}
+
+.signal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:22px;
+
+}
+
+.signal-grid span{
+
+    display:block;
+
+    color:#9e9eb0;
+
+    margin-bottom:8px;
+
+}
+
+.signal-grid strong{
+
+    color:#fff;
+
+    font-size:1.15rem;
+
+}
+
+.signal-buy{
+
+    color:#00ff99 !important;
+
+}
+
+.dashboard-footer{
+
+    margin-top:35px;
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:#9f9fad;
+
+    text-align:center;
+
+    line-height:1.8;
+
+}
+
+/* =====================================================
+   DASHBOARD V4 - PART A
+   Terminal Header + Market Overview
+===================================================== */
+
+/* =========================
+   DASHBOARD CARD
+========================= */
+
+.dashboard-card{
+
+    background:rgba(18,22,34,.82);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:26px;
+
+    padding:40px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.dashboard-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:35px;
+
+}
+
+.dashboard-header h3{
+
+    margin:0;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    letter-spacing:.5px;
+
+}
+
+.dashboard-header small{
+
+    display:block;
+
+    margin-top:8px;
+
+    color:#98a2b3;
+
+}
+
+/* =========================
+   LIVE BADGE
+========================= */
+
+.dashboard-status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px 24px;
+
+    border-radius:999px;
+
+    background:rgba(0,255,140,.08);
+
+    border:1px solid rgba(0,255,140,.25);
+
+    color:#38ffb3;
+
+    font-size:.9rem;
+
+    font-weight:700;
+
+}
+
+.status-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#00ff99;
+
+    box-shadow:
+        0 0 8px #00ff99,
+        0 0 16px #00ff99;
+
+    animation:livePulse 1.8s infinite;
+
+}
+
+@keyframes livePulse{
+
+    0%{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(1.25);
+
+    }
+
+    100%{
+
+        opacity:.4;
+
+        transform:scale(.8);
+
+    }
+
+}
+
+/* =========================
+   MARKET OVERVIEW
+========================= */
+
+.market-overview{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.overview-card{
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.3s;
+
+}
+
+.overview-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,200,61,.45);
+
+    box-shadow:
+        0 12px 28px rgba(255,200,61,.12);
+
+}
+
+.overview-card span{
+
+    display:block;
+
+    color:#98a2b3;
+
+    font-size:.85rem;
+
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+.overview-card strong{
+
+    display:block;
+
+    color:#ffffff;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+}
+
+/* =========================
+   RESPONSIVE (PART A)
+========================= */
+
+@media(max-width:992px){
+
+    .market-overview{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .dashboard-card{
+
+        padding:24px;
+
+    }
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .market-overview{
+
+        grid-template-columns:1fr;
+
+    }
+
+}

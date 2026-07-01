@@ -1,38 +1,87 @@
 /* =====================================================
-   DASHBOARD PREVIEW
-===================================================== */
+   AI DASHBOARD V4
+   PART A
+   Terminal + Header + Overview
+=====================================================*/
+
+/* =========================
+   DASHBOARD SECTION
+========================= */
 
 .dashboard-preview{
 
-    padding:100px 0;
+    background:transparent;
 
 }
 
 /* =========================
-   CARD
+   MAIN TERMINAL
 ========================= */
 
 .dashboard-card{
 
-    max-width:1000px;
+    background:rgba(16,20,32,.82);
 
-    margin:auto;
-
-    padding:40px;
-
-    border-radius:30px;
-
-    background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.05),
-        rgba(255,255,255,.02)
-    );
+    backdrop-filter:blur(18px);
 
     border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(20px);
+    border-radius:28px;
 
-    box-shadow:0 30px 80px rgba(0,0,0,.35);
+    padding:40px;
+
+    box-shadow:
+        0 20px 70px rgba(0,0,0,.45);
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* Glow */
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+
+    right:-150px;
+
+    width:300px;
+
+    height:300px;
+
+    background:radial-gradient(circle,
+        rgba(255,200,61,.10),
+        transparent 70%);
+
+    pointer-events:none;
+
+}
+
+.dashboard-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-150px;
+
+    left:-150px;
+
+    width:260px;
+
+    height:260px;
+
+    background:radial-gradient(circle,
+        rgba(110,75,255,.10),
+        transparent 70%);
+
+    pointer-events:none;
 
 }
 
@@ -48,39 +97,43 @@
 
     align-items:center;
 
+    gap:20px;
+
     margin-bottom:35px;
 
-    padding-bottom:25px;
+    position:relative;
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:2;
 
 }
 
-.dashboard-title h3{
+.dashboard-header h3{
 
     margin:0;
 
-    font-size:1.6rem;
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    color:#ffffff;
 
 }
 
-.dashboard-title p{
+.dashboard-header small{
+
+    display:block;
 
     margin-top:8px;
 
-    margin-bottom:0;
+    color:#98a2b3;
 
-    color:var(--text-soft);
-
-}
-
-.dashboard-title span{
-
-    color:var(--primary);
-
-    font-weight:600;
+    letter-spacing:.5px;
 
 }
+
+/* =========================
+   LIVE BADGE
+========================= */
 
 .dashboard-status{
 
@@ -90,17 +143,19 @@
 
     gap:12px;
 
-    padding:10px 18px;
+    padding:12px 22px;
 
-    border-radius:50px;
+    border-radius:999px;
 
-    background:rgba(50,255,126,.08);
+    background:rgba(0,255,170,.08);
 
-    border:1px solid rgba(50,255,126,.25);
+    border:1px solid rgba(0,255,170,.25);
 
-    color:#66ffb5;
+    color:#38ffb3;
 
     font-weight:700;
+
+    font-size:.9rem;
 
 }
 
@@ -112,21 +167,21 @@
 
     border-radius:50%;
 
-    background:#32ff7e;
+    background:#00ff99;
 
-    box-shadow:0 0 15px #32ff7e;
-
-    animation:pulse 2s infinite;
+    animation:aiPulse 1.8s infinite;
 
 }
 
-@keyframes pulse{
+@keyframes aiPulse{
 
     0%{
 
-        opacity:.4;
+        opacity:.3;
 
-        transform:scale(.9);
+        transform:scale(.8);
+
+        box-shadow:0 0 0 rgba(0,255,153,.2);
 
     }
 
@@ -134,83 +189,29 @@
 
         opacity:1;
 
-        transform:scale(1.2);
+        transform:scale(1.25);
+
+        box-shadow:0 0 18px rgba(0,255,153,.9);
 
     }
 
     100%{
 
-        opacity:.4;
+        opacity:.3;
 
-        transform:scale(.9);
+        transform:scale(.8);
+
+        box-shadow:0 0 0 rgba(0,255,153,.2);
 
     }
 
 }
 
 /* =========================
-   CHART
+   MARKET OVERVIEW
 ========================= */
 
-.dashboard-chart{
-
-    height:320px;
-
-    border-radius:24px;
-
-    background:linear-gradient(
-        180deg,
-        rgba(255,255,255,.04),
-        rgba(255,255,255,.02)
-    );
-
-    border:1px solid rgba(255,255,255,.08);
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-bottom:35px;
-
-}
-
-.chart-placeholder{
-
-    text-align:center;
-
-}
-
-.chart-placeholder i{
-
-    font-size:4rem;
-
-    color:var(--primary);
-
-    margin-bottom:20px;
-
-}
-
-.chart-placeholder h4{
-
-    margin-bottom:10px;
-
-}
-
-.chart-placeholder p{
-
-    max-width:420px;
-
-    margin:auto;
-
-}
-
-/* =========================
-   GRID
-========================= */
-
-.dashboard-grid{
+.market-overview{
 
     display:grid;
 
@@ -220,49 +221,372 @@
 
     margin-bottom:35px;
 
+    position:relative;
+
+    z-index:2;
+
 }
 
-.dashboard-item{
-
-    padding:20px;
-
-    border-radius:18px;
+.overview-card{
 
     background:rgba(255,255,255,.04);
 
     border:1px solid rgba(255,255,255,.08);
 
-    transition:.3s;
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:.35s;
 
 }
 
-.dashboard-item:hover{
+.overview-card:hover{
 
-    transform:translateY(-5px);
+    transform:translateY(-6px);
 
-    border-color:rgba(255,200,61,.35);
+    border-color:rgba(255,200,61,.40);
+
+    box-shadow:
+
+        0 10px 30px rgba(255,200,61,.12);
 
 }
 
-.dashboard-item span{
+.overview-card span{
 
     display:block;
 
-    color:var(--text-soft);
+    color:#98a2b3;
 
-    font-size:.9rem;
+    font-size:.82rem;
 
-    margin-bottom:8px;
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    margin-bottom:12px;
+
+}
+
+.overview-card strong{
+
+    display:block;
+
+    font-size:1.3rem;
+
+    color:#ffffff;
+
+    font-weight:700;
 
 }
 
-.dashboard-item strong{
+/* =========================
+   RESPONSIVE
+========================= */
 
-    color:var(--primary);
+@media(max-width:992px){
 
-    font-size:1.1rem;
+    .market-overview{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
 
 }
+
+@media(max-width:576px){
+
+    .dashboard-card{
+
+        padding:24px;
+
+    }
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .market-overview{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =====================================================
+   AI DASHBOARD V4
+   PART B
+   Chart + Analysis Panel
+=====================================================*/
+
+/* =========================
+   CHART
+========================= */
+
+.dashboard-chart{
+
+    position:relative;
+
+    height:380px;
+
+    border-radius:24px;
+
+    margin-bottom:35px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px),
+        linear-gradient(180deg,#171b29,#101521);
+
+    background-size:
+        40px 40px,
+        40px 40px,
+        cover;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* Glow */
+
+.dashboard-chart::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255,200,61,.06),
+            transparent 65%);
+
+    pointer-events:none;
+
+}
+
+/* Fake Candle */
+
+.dashboard-chart::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:45px;
+
+    height:140px;
+
+    opacity:.18;
+
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='140'%3E%3Cpolyline fill='none' stroke='%23FFC83D' stroke-width='3' points='0,120 60,100 120,108 180,60 240,70 300,55 360,85 420,45 480,70 540,40 600,55 660,35 720,58 780,22 840,40 900,18'/%3E%3C/svg%3E");
+
+    background-repeat:no-repeat;
+
+    background-size:cover;
+
+}
+
+.chart-placeholder{
+
+    position:relative;
+
+    z-index:2;
+
+    text-align:center;
+
+}
+
+.chart-placeholder i{
+
+    font-size:70px;
+
+    color:#ffd24d;
+
+    margin-bottom:20px;
+
+}
+
+.chart-placeholder h4{
+
+    color:#ffffff;
+
+    margin-bottom:12px;
+
+}
+
+.chart-placeholder p{
+
+    color:#aeb6c7;
+
+    max-width:520px;
+
+    margin:auto;
+
+}
+
+/* =========================
+   ANALYSIS GRID
+========================= */
+
+.analysis-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+    margin-bottom:40px;
+
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.analysis-panel{
+
+    background:rgba(255,255,255,.035);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    transition:.35s;
+
+}
+
+.analysis-panel:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,200,61,.35);
+
+    box-shadow:
+
+        0 14px 34px rgba(255,200,61,.10);
+
+}
+
+.analysis-panel h5{
+
+    color:#ffffff;
+
+    margin-bottom:22px;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+}
+
+/* =========================
+   LIST
+========================= */
+
+.analysis-panel ul{
+
+    list-style:none;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+.analysis-panel li{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.analysis-panel li:last-child{
+
+    border-bottom:none;
+
+}
+
+.analysis-panel span{
+
+    color:#9ca8bd;
+
+    font-size:.92rem;
+
+}
+
+.analysis-panel strong{
+
+    color:#ffffff;
+
+    font-weight:600;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .analysis-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .dashboard-chart{
+
+        height:260px;
+
+    }
+
+    .chart-placeholder i{
+
+        font-size:48px;
+
+    }
+
+}
+
+/* =====================================================
+   AI DASHBOARD V4
+   PART C
+   Probability + Recommendation + AI Engine
+=====================================================*/
 
 /* =========================
    PROBABILITY
@@ -270,7 +594,7 @@
 
 .dashboard-probability{
 
-    margin-top:25px;
+    margin-bottom:45px;
 
 }
 
@@ -280,19 +604,29 @@
 
     justify-content:space-between;
 
-    margin-bottom:10px;
+    align-items:center;
+
+    margin-bottom:12px;
+
+    color:#ffffff;
+
+    font-weight:600;
 
 }
 
 .probability-bar{
 
+    width:100%;
+
     height:14px;
 
-    border-radius:50px;
+    border-radius:30px;
+
+    background:#232838;
 
     overflow:hidden;
 
-    background:rgba(255,255,255,.08);
+    margin-bottom:20px;
 
 }
 
@@ -300,7 +634,9 @@
 
     height:100%;
 
-    border-radius:50px;
+    border-radius:30px;
+
+    transition:width 1.2s ease;
 
 }
 
@@ -310,8 +646,8 @@
 
     background:linear-gradient(
         90deg,
-        #00d26a,
-        #32ff7e
+        #00c853,
+        #00ff99
     );
 
 }
@@ -322,9 +658,175 @@
 
     background:linear-gradient(
         90deg,
-        #ff5b5b,
-        #ff8080
+        #ff5252,
+        #ff1744
     );
+
+}
+
+/* =========================
+   RECOMMENDATION
+========================= */
+
+.signal-card{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:32px;
+
+    margin-bottom:40px;
+
+    transition:.35s;
+
+}
+
+.signal-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:rgba(255,200,61,.35);
+
+    box-shadow:
+
+        0 18px 40px rgba(255,200,61,.10);
+
+}
+
+.signal-card h4{
+
+    color:#ffffff;
+
+    margin-bottom:28px;
+
+    font-size:1.25rem;
+
+}
+
+/* =========================
+   SIGNAL GRID
+========================= */
+
+.signal-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+}
+
+.signal-grid div{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:16px;
+
+    padding:20px;
+
+}
+
+.signal-grid span{
+
+    display:block;
+
+    color:#98a2b3;
+
+    font-size:.85rem;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+.signal-grid strong{
+
+    display:block;
+
+    color:#ffffff;
+
+    font-size:1.25rem;
+
+    font-weight:700;
+
+}
+
+.signal-buy{
+
+    color:#00ff99 !important;
+
+}
+
+/* =========================
+   AI ENGINE
+========================= */
+
+.engine-panel{
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    margin-bottom:35px;
+
+}
+
+.engine-panel h4{
+
+    color:#ffffff;
+
+    margin-bottom:24px;
+
+}
+
+.engine-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:16px;
+
+}
+
+.engine-grid div{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    border-radius:14px;
+
+    padding:16px;
+
+    text-align:center;
+
+    color:#d6dbe6;
+
+    font-size:.9rem;
+
+    transition:.30s;
+
+}
+
+.engine-grid div:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(255,200,61,.30);
 
 }
 
@@ -334,29 +836,278 @@
 
 .dashboard-footer{
 
-    margin-top:35px;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding-top:24px;
 
     text-align:center;
 
-    color:var(--text-soft);
+    color:#98a2b3;
 
-    border-top:1px solid rgba(255,255,255,.08);
+    line-height:1.8;
 
-    padding-top:20px;
+}
+
+.dashboard-footer strong{
+
+    color:#ffffff;
 
 }
 
 /* =========================
-   TABLET
+   RESPONSIVE
 ========================= */
 
 @media(max-width:992px){
 
-.dashboard-grid{
+    .signal-grid{
 
-grid-template-columns:repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .engine-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
 
 }
+
+@media(max-width:576px){
+
+    .signal-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .engine-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+/* =====================================================
+   AI DASHBOARD V4
+   PART D
+   Final Polish
+=====================================================*/
+
+/* =========================
+   DASHBOARD HOVER
+========================= */
+
+.dashboard-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,200,61,.18);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 35px rgba(255,200,61,.08);
+
+}
+
+/* =========================
+   LIVE BADGE GLOW
+========================= */
+
+.dashboard-status{
+
+    animation:statusGlow 3s ease-in-out infinite;
+
+}
+
+@keyframes statusGlow{
+
+    0%{
+
+        box-shadow:0 0 0 rgba(0,255,153,0);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 18px rgba(0,255,153,.18);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 rgba(0,255,153,0);
+
+    }
+
+}
+
+/* =========================
+   PANEL HOVER
+========================= */
+
+.analysis-panel,
+.signal-card,
+.engine-panel,
+.overview-card{
+
+    transition:
+        transform .30s,
+        box-shadow .30s,
+        border-color .30s;
+
+}
+
+.analysis-panel:hover,
+.signal-card:hover,
+.engine-panel:hover,
+.overview-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* =========================
+   CHART ANIMATION
+========================= */
+
+.dashboard-chart{
+
+    overflow:hidden;
+
+}
+
+.dashboard-chart::before{
+
+    animation:chartGlow 8s linear infinite;
+
+}
+
+@keyframes chartGlow{
+
+    0%{
+
+        opacity:.25;
+
+    }
+
+    50%{
+
+        opacity:.55;
+
+    }
+
+    100%{
+
+        opacity:.25;
+
+    }
+
+}
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.buy-fill,
+.sell-fill{
+
+    animation:progressLoad 1.6s ease;
+
+    transform-origin:left;
+
+}
+
+@keyframes progressLoad{
+
+    from{
+
+        transform:scaleX(0);
+
+    }
+
+    to{
+
+        transform:scaleX(1);
+
+    }
+
+}
+
+/* =========================
+   ENGINE CARD
+========================= */
+
+.engine-grid div{
+
+    cursor:default;
+
+}
+
+.engine-grid div:hover{
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* =========================
+   SIGNAL CARD
+========================= */
+
+.signal-grid div{
+
+    transition:.30s;
+
+}
+
+.signal-grid div:hover{
+
+    border-color:rgba(255,200,61,.30);
+
+    background:rgba(255,255,255,.05);
+
+}
+
+/* =========================
+   TERMINAL SCAN EFFECT
+========================= */
+
+.dashboard-card::after{
+
+    animation:scanEffect 12s linear infinite;
+
+}
+
+@keyframes scanEffect{
+
+    0%{
+
+        opacity:.18;
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+    100%{
+
+        opacity:.18;
+
+    }
 
 }
 
@@ -366,32 +1117,36 @@ grid-template-columns:repeat(2,1fr);
 
 @media(max-width:768px){
 
-.dashboard-card{
+    .dashboard-header{
 
-padding:25px;
+        gap:15px;
 
-}
+    }
 
-.dashboard-header{
+    .dashboard-header h3{
 
-flex-direction:column;
+        font-size:1.35rem;
 
-align-items:flex-start;
+    }
 
-gap:20px;
+    .dashboard-status{
 
-}
+        width:100%;
 
-.dashboard-grid{
+        justify-content:center;
 
-grid-template-columns:1fr;
+    }
 
-}
+    .dashboard-chart{
 
-.dashboard-chart{
+        height:240px;
 
-height:220px;
+    }
 
-}
+    .dashboard-card{
+
+        padding:22px;
+
+    }
 
 }
