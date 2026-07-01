@@ -1,0 +1,221 @@
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:calc(var(--navbar-height) + 40px);
+
+    padding-bottom:80px;
+
+}
+
+.hero .row{
+
+    align-items:center;
+
+}
+
+.hero-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 22px;
+
+    border-radius:var(--radius-pill);
+
+    background:rgba(110,75,255,.12);
+
+    border:1px solid rgba(110,75,255,.30);
+
+    color:#d6dcff;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+}
+
+.hero-title{
+
+    margin-top:28px;
+
+    font-size:clamp(2.6rem,5vw,4.2rem);
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    max-width:700px;
+
+}
+
+.hero-title{
+
+    margin:28px auto 0;
+
+    text-align:center;
+
+    max-width:900px;
+
+}
+
+.hero-description{
+
+    margin:28px auto 0;
+
+    text-align:center;
+
+    max-width:820px;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+}
+
+.hero-image{
+
+    width:min(430px,100%);
+
+    margin:auto;
+
+    filter:drop-shadow(0 0 45px rgba(255,200,61,.20));
+
+    animation:heroFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes heroFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-14px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =====================================================
+   HERO VISUAL
+===================================================== */
+
+#hero-visual{
+
+    width:100%;
+
+    max-width:520px;
+
+    height:560px;
+
+    margin:auto;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.02)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.45);
+
+}
+
+/* Glow */
+
+#hero-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(110,75,255,.45),
+
+            transparent 70%
+
+        );
+
+    top:-120px;
+
+    right:-120px;
+
+}
+
+/* Gold Glow */
+
+#hero-visual::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(255,200,61,.28),
+
+            transparent 70%
+
+        );
+
+    bottom:-90px;
+
+    left:-90px;
+
+}

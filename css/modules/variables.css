@@ -1,0 +1,55 @@
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+
+    /* Background */
+    --bg:#05070d;
+    --bg-secondary:#0c1220;
+
+    /* Surface */
+    --surface:#111827;
+    --surface-light:#1b2538;
+
+    /* Primary */
+    --primary:#FFC83D;
+    --primary-dark:#D89F00;
+
+    /* Accent */
+    --accent:#6E4BFF;
+
+    /* Text */
+    --text:#FFFFFF;
+    --text-soft:#B7C2D0;
+    --text-muted:#8B95A7;
+
+    /* Border */
+    --border:rgba(255,255,255,.08);
+
+    /* Status */
+    --success:#22C55E;
+    --danger:#EF4444;
+    --warning:#F59E0B;
+
+    /* Shadow */
+    --shadow-sm:0 5px 15px rgba(0,0,0,.15);
+    --shadow-md:0 10px 30px rgba(0,0,0,.25);
+    --shadow-lg:0 20px 60px rgba(0,0,0,.45);
+
+    /* Radius */
+    --radius-sm:10px;
+    --radius:18px;
+    --radius-lg:28px;
+    --radius-pill:999px;
+
+    /* Transition */
+    --transition:.35s ease;
+
+    /* Layout */
+    --container:1200px;
+
+    /* Navbar */
+    --navbar-height:80px;
+
+}
