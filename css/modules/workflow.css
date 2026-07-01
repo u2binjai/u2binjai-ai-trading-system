@@ -1,0 +1,77 @@
+/* =====================================================
+   WORKFLOW
+===================================================== */
+
+.workflow{
+
+    padding:100px 0;
+
+}
+
+.workflow-container{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-top:50px;
+
+}
+
+.workflow-box{
+
+    min-width:180px;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:22px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+
+}
+
+.workflow-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:rgba(255,200,61,.35);
+
+    box-shadow:0 35px 70px rgba(255,200,61,.12);
+
+}
+
+.workflow-arrow{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}

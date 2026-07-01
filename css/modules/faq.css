@@ -1,0 +1,83 @@
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq{
+
+    padding:100px 0;
+
+}
+
+#faqAccordion{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.accordion-item{
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px !important;
+
+    overflow:hidden;
+
+    margin-bottom:18px;
+
+    backdrop-filter:blur(18px);
+
+}
+
+.accordion-button{
+
+    background:transparent;
+
+    color:var(--text);
+
+    font-weight:600;
+
+    padding:22px;
+
+    box-shadow:none !important;
+
+}
+
+.accordion-button:not(.collapsed){
+
+    background:rgba(255,200,61,.08);
+
+    color:var(--primary);
+
+}
+
+.accordion-button::after{
+
+    filter:brightness(5);
+
+}
+
+.accordion-body{
+
+    background:transparent;
+
+    color:var(--text-soft);
+
+    line-height:1.8;
+
+}
+
+.accordion-button:focus{
+
+    box-shadow:none;
+
+    border:none;
+
+}

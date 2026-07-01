@@ -1,0 +1,73 @@
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    padding:100px 0;
+
+    text-align:center;
+
+}
+
+.cta .container{
+
+    max-width:900px;
+
+    padding:60px 40px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+
+}
+
+.cta h2{
+
+    font-size:2.5rem;
+
+    margin-bottom:20px;
+
+}
+
+.cta p{
+
+    max-width:700px;
+
+    margin:0 auto 35px;
+
+    color:var(--text-soft);
+
+    font-size:1.05rem;
+
+}
+
+.cta .btn{
+
+    padding:16px 42px;
+
+    font-size:1.05rem;
+
+    border-radius:50px;
+
+    transition:.3s;
+
+}
+
+.cta .btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 15px 35px rgba(255,200,61,.25);
+
+}

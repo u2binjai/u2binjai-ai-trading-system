@@ -1,0 +1,58 @@
+/* =====================================================
+   MEMBERSHIP - TAMBAHAN UNTUK 3 PAKET HARGA
+   (tempel di bawah isi membership.css yang sudah ada)
+===================================================== */
+
+.pricing-card{
+    position:relative;
+    overflow:visible;
+}
+
+.price-period{
+    color:var(--text-muted);
+    font-size:.95rem;
+    margin-top:-20px;
+    margin-bottom:30px;
+}
+
+/* Kartu paket paling populer, sedikit ditonjolkan */
+.pricing-card-popular{
+    border-color:rgba(255,200,61,.5);
+    box-shadow:0 30px 70px rgba(255,200,61,.15);
+    transform:scale(1.03);
+}
+
+.pricing-card-popular:hover{
+    transform:scale(1.03) translateY(-10px);
+}
+
+.pricing-badge{
+    position:absolute;
+    top:-14px;
+    left:50%;
+    transform:translateX(-50%);
+    background:var(--primary);
+    color:var(--bg);
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.03em;
+    padding:6px 18px;
+    border-radius:var(--radius-pill);
+    box-shadow:0 8px 20px rgba(255,200,61,.35);
+    white-space:nowrap;
+}
+
+.pricing-note{
+    color:var(--text-muted);
+    font-size:.9rem;
+}
+
+@media(max-width:768px){
+    .pricing-card-popular{
+        transform:none;
+    }
+
+    .pricing-card-popular:hover{
+        transform:translateY(-10px);
+    }
+}
