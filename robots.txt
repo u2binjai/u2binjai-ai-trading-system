@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://u2binjai.github.io/u2binjai-ai-trading-system/sitemap.xml

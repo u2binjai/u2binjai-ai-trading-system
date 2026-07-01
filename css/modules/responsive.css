@@ -1,0 +1,241 @@
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* =========================
+   Laptop
+========================= */
+
+@media (max-width:1200px){
+
+    .section-title{
+
+        font-size:2.4rem;
+
+    }
+
+}
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width:992px){
+
+    section{
+
+        padding:80px 0;
+
+    }
+
+    .hero{
+
+        padding-top:140px;
+
+    }
+
+    .hero-title{
+
+        font-size:3rem;
+
+    }
+
+    .hero-description{
+
+        font-size:1rem;
+
+    }
+
+    .section-title{
+
+        font-size:2.2rem;
+
+    }
+
+    .method-flow{
+
+        padding:30px;
+
+    }
+
+    .workflow-container{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .workflow-arrow{
+
+        transform:rotate(90deg);
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width:768px){
+
+    section{
+
+        padding:70px 0;
+
+    }
+
+    .hero{
+
+        padding-top:130px;
+
+    }
+
+    .hero-title{
+
+        font-size:2.3rem;
+
+    }
+
+    .hero-description{
+
+        font-size:.95rem;
+
+    }
+
+    .hero-buttons{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:15px;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+    }
+
+    .section-title{
+
+        font-size:1.9rem;
+
+    }
+
+    .statistics .row > div{
+
+        margin-bottom:20px;
+
+    }
+
+    .feature-card{
+
+        padding:30px 25px;
+
+    }
+
+    .pricing-card{
+
+        padding:35px 25px;
+
+    }
+
+    .dashboard-card{
+
+        padding:25px;
+
+    }
+
+    .dashboard-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .dashboard-chart{
+
+        height:220px;
+
+    }
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cta .container{
+
+        padding:40px 25px;
+
+    }
+
+    .footer-links{
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+}
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width:480px){
+
+    .hero-title{
+
+        font-size:2rem;
+
+    }
+
+    .section-title{
+
+        font-size:1.7rem;
+
+    }
+
+    .stat-number{
+
+        font-size:2rem;
+
+    }
+
+    .dashboard-card{
+
+        padding:20px;
+
+    }
+
+    .dashboard-title h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .dashboard-status{
+
+        font-size:.8rem;
+
+        padding:8px 14px;
+
+    }
+
+}
